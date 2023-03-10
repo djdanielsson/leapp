@@ -1,0 +1,25 @@
+---
+- name: Upgrade
+  hosts: all
+  strategy: free
+  become: true
+  tasks:
+    - name: Initialize lock and logging
+      ansible.builtin.import_role:
+        name: logging
+        tasks_from: job_start.yml
+      vars:
+        job_name: 'RIPU in-place OS upgrade'
+
+    - name: Perform OS upgrade
+      block:
+        - name: Leapp upgrade
+          ansible.builtin.import_role:
+            name: upgrade
+
+      always:
+        - name: Clean up
+          ansible.builtin.import_role:
+            name: logging
+            tasks_from: clean_up.yml
+...
