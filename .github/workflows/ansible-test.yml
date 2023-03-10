@@ -1,3 +1,4 @@
+---
 # README FIRST
 # 1. If you don't have unit tests, remove that section.
 # 2. If your collection depends on other collections ensure they are installed,
@@ -209,7 +210,7 @@ jobs:
             python: '2.6'
           - ansible: devel
             python: '2.6'
-            
+
 
     steps:
       - name: >-
@@ -251,3 +252,4 @@ jobs:
         uses: re-actors/alls-green@release/v1
         with:
           jobs: ${{ toJSON(needs) }}
+...

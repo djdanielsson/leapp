@@ -1,3 +1,4 @@
+---
 name: Lint extra docsite docs and links
 on:
   # Run CI against all pushes (direct commits, also merged PRs), Pull Requests
@@ -32,3 +33,4 @@ jobs:
 
       - name: Run collection docs linter
         run: antsibull-docs lint-collection-docs .
+...
