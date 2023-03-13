@@ -1,22 +1,7 @@
 ---
 # defaults file for upgrade
-analysis_packages_el7:
-  - leapp-upgrade-el7toel8
-  - lvm2-python-boom
-
-analysis_packages_el8:
-  - leapp-upgrade-el8toel9
-  - leapp-rhui-aws
-  - vdo
-  - boom-boot
-
-analysis_repos_el7:
-  - rhel-7-server-extras-rpms
-
 log_directory: /var/log/ripu
 log_file: "{{ log_directory }}/ripu.log"
-
-leapp_preupg_opts: '--no-rhsm'
 
 leapp_upgrade_opts: '--no-rhsm'
 

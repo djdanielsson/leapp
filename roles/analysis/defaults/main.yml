@@ -1,3 +1,19 @@
 ---
 # defaults file for analysis
+analysis_packages_el7:
+  - leapp-upgrade-el7toel8
+  - lvm2-python-boom
+
+analysis_packages_el8:
+  - leapp-upgrade-el8toel9
+  - leapp-rhui-aws
+  - vdo
+  - boom-boot
+
+analysis_repos_el7:
+  - rhel-7-server-extras-rpms
+
+leapp_preupg_opts: '--no-rhsm'
+
+result_filename: '/var/log/leapp/leapp-report.txt'
 ...
