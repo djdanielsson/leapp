@@ -19,6 +19,7 @@
   register: leapp
   args:
     executable: /bin/bash
+  ignore_errors: true
 
 - name: Result file status
   ansible.builtin.stat:
