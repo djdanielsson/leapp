@@ -7,7 +7,6 @@
     - name: Initialize lock and logging
       ansible.builtin.import_role:
         name: logging
-        tasks_from: job_start.yml
       vars:
         job_name: 'RIPU LVM snapshot rollback'
 
@@ -17,9 +16,9 @@
           ansible.builtin.import_role:
             name: rollback
 
-      always:
-        - name: Clean up
-          ansible.builtin.import_role:
-            name: logging
-            tasks_from: clean_up.yml
+# always:
+#   - name: Clean up
+#     ansible.builtin.import_role:
+#       name: logging
+#       tasks_from: clean_up.yml
 ...

@@ -1,4 +1,5 @@
 ---
+# handlers file for logging
 - name: Archive log file
   ansible.builtin.shell: |
     echo Job ended at $(date -Is) >> {{ log_file }}

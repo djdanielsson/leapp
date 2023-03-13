@@ -1,4 +1,5 @@
 ---
+# tasks file for logging
 - name: Create log directory
   ansible.builtin.file:
     path: "{{ log_directory }}"
@@ -16,7 +17,9 @@
     mode: 0644
     validate: "test ! -e {{ log_file }} -a %s"
   register: mklog
-  ignore_errors: true
+  notify:
+    - "Archive log file"
+  failed_when: false
 
 - name: Check for duplicate playbook job
   ansible.builtin.fail:

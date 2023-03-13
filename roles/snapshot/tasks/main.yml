@@ -20,7 +20,7 @@
   ansible.builtin.import_tasks: nutanix.yml
   when: snapshot is match('nutanix')
 
-- name: Import vcenter.yml tasks
+- name: Import vcenter tasks
   ansible.builtin.import_tasks: vcenter.yml
   when: snapshot is match('vcneter')
 
