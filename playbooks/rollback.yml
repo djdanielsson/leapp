@@ -3,6 +3,7 @@
   hosts: all
   strategy: free
   become: true
+  force_handlers: true
   tasks:
     - name: Initialize lock and logging
       ansible.builtin.import_role:
