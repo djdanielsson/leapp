@@ -3,7 +3,8 @@
 log_directory: /var/log/ripu
 log_file: "{{ log_directory }}/ripu.log"
 
-leapp_upgrade_opts: '--no-rhsm'
+leapp_upgrade_opts: ''
+# leapp_upgrade_opts: '--no-rhsm'
 
 result_filename: '/var/log/leapp/leapp-report.txt'
 ...
