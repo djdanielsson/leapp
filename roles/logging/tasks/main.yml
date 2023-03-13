@@ -28,4 +28,6 @@
 
 - name: Log job start timestamp
   ansible.builtin.shell: "echo Job started at $(date -Is) >> {{ log_file }}"
+  notify:
+    - "Archive log file"
 ...
