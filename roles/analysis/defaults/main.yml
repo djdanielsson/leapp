@@ -19,7 +19,7 @@ leapp_upgrade_type: disconnected
 leapp_preupg_opts: "{{ '--no-rhsm' if leapp_upgrade_type == 'connected' else '' }}"
 
 # leapp_metadata_url only used for disconnected leapp upgrades
-leapp_metadata_url: https://sat.localdomain.local/pub/leapp-data-21.tar.gz
+leapp_metadata_url: https://satellite.example.com/pub/leapp-data-21.tar.gz
 
 
 result_filename: '/var/log/leapp/leapp-report.txt'
