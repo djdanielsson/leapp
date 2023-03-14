@@ -42,9 +42,16 @@
     post_reboot_delay: 60
     reboot_timeout: 43200
 
-- name: Wait for Leapp firstboot phase to finish
-  ansible.builtin.debug:
-    msg: 'FIXME: add unitl task here!'
+- name: Wait for leapp_resume run once service to no longer exist
+  ansible.builtin.service:
+    name: leapp_resume
+    state: started
+  check_mode: true
+  register: leapp_resume_result
+  ignore_errors: true
+  until: leapp_resume_result.failed
+  retries: 360
+  delay: 10
 
 - name: Run postupgrade hooks
   ansible.builtin.shell: |
