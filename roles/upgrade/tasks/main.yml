@@ -8,4 +8,7 @@
 - name: Include tasks for leapp upgrade
   ansible.builtin.include_tasks: upgrade-leapp.yml
   when: ansible_distribution_major_version|int >= 7
+
+- name: Include post upgrade validation
+  ansible.builtin.include_tasks: upgrade-validation.yml
 ...
