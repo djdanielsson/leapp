@@ -1,7 +1,7 @@
 ---
 # Ansible Linter rules
-# mock_modules:
-#   - ansible.controller.controller_api
+mock_modules:
+  - community.vmware.vmware_guest_snapshot
 
 # Exclude paths from linter
 exclude_paths:
